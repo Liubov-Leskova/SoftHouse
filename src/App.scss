@@ -1,0 +1,140 @@
+@import-normalize;
+@import "./assets/const";
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.2;
+  background: fade-out($grey, 0.9);
+}
+html, body{
+  overflow-x: hidden;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+a{
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+svg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  fill: inherit
+}
+.italic{
+  font-style: italic;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  position: relative;
+  @media #{$m768} {
+    margin-left: auto;
+    margin-right: auto;
+    width: 750px;
+  }
+    @media #{$m992} {
+    width: 970px;
+  }
+    @media #{$m1200} {
+    width: 1200px;
+  }
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  &_justify_between{
+    justify-content: space-between;
+  }
+}
+
+.icon{
+  position: relative;
+  display: inline-block;
+  fill: $grey-1;
+  cursor: pointer;
+  &:hover{
+    opacity: 1;
+  }
+}
+.img{
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  &_loaded{
+    opacity: 1;
+  }
+  &_responsive{
+    width: 100%;
+    height: auto;
+  }
+}
+
+.input, .btn {
+  border-radius: $border-radius;
+  font-size: 100%;
+  transition: 0.2s ease;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  &__default {
+    border: 1px solid $blue;
+    color: $blue;
+
+    &:hover {
+      background: $blue;
+      color: #fff;
+    }
+  }
+}
+
+.input {
+  border: 1px solid $grey;
+  padding: 0.5rem 0.7rem;
+  flex: 1 1 0;
+  &:hover {
+    border-color: fade-out($blue, 0.5);
+  }
+
+  &:focus {
+    color: #495057;
+    background-color: #fff;
+    outline: 0;
+    border-color: $blue;
+  }
+}
+
+.header {
+  background: fade-out($grey, 0.4);
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  &__logo{
+    font-size: 125%;
+    color: $blue;
+    &:hover{
+      text-shadow: 1px 1px 2px #fff;
+    }
+  }
+}
+
+.loader{
+  padding: 1rem 15px;
+}
